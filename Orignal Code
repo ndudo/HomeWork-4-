@@ -1,0 +1,32 @@
+
+#include<math.h>
+#include<stdio.h>
+main()
+{
+   char userIn = 'Y';
+   do{
+   float eR = 6371.01;
+   float sL, sLo, eL, eLo;
+   printf("Enter your starting latitude...");
+   scanf("%f", & sLa);
+   fflush(stdin);
+   printf("\nEnter your starting longitude...");
+   scanf("%f", & sLo);
+   fflush(stdin);
+   printf("\nEnter your ending latitude...");
+   scanf("%f", & eL);
+   fflush(stdin);
+   printf("\nEnter your ending longitude...");
+   scanf("%f", & eLo);
+   fflush(stdin);
+   startLat *= 0.0174533;
+   endLat *= 0.0174533;
+   startLong *= 0.0174533;
+   endLong *= 0.0174533;
+   float distance = eR * acos(sin(sL) * sin(eL) + cos(sL) *cos(eL) * cos(sLo - eLo));
+   printf("\nThe distance between these coordinates is: %f", distance);
+   printf("\nEnter Y to find another distance and N to exit.");
+   scanf(" %c", & userIn);
+   fflush(stdin);
+   }while (userIn == 'Y' || userIn == 'y');
+}
