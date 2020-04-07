@@ -1,0 +1,32 @@
+
+#include<math.h>
+#include<stdio.h>
+main()
+{
+   char userIn = 'yes' ;
+   do{
+   float earthRadious = 6371.01;
+   float startingLatitude, startingLongitude, endingLatitude, endingLongitud;
+   printf("Enter your starting latitude...");
+   scanf("%f", & startingLatitude);
+   fflush(stdin);
+   printf("\nEnter your starting longitude...");
+   scanf("%f", & startingLongitude);
+   fflush(stdin);
+   printf("\nEnter your ending latitude...");
+   scanf("%f", & endingLatitude);
+   fflush(stdin);
+   printf("\nEnter your ending longitude...");
+   scanf("%f", & endingLongitud);
+   fflush(stdin);
+   startLatitude *= 0.0174533;
+   endLatitude *= 0.0174533;
+   startLongitude *= 0.0174533;
+   endLongitud *= 0.0174533;
+   float distance = earthRadious * acos(sin(startLattitude) * sin(endLatitude) + cos(startLatitude) *cos(endLatitudeL) * cos(startLongitude - endingLongitud));
+   printf("\nThe distance between these coordinates is: %f", distance);
+   printf("\nEnter Yes to find another distance and N to exit.");
+   scanf(" %c", & userIn);
+   fflush(stdin);
+   }while (userIn == 'Yes' || userIn == 'yes');
+}
